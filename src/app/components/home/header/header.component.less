@@ -1,0 +1,44 @@
+@import '~src/styles';
+
+main {
+    display: none;
+
+    background-color: @secondary;
+
+    @media (min-width: 992px) {
+        display: flex;
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        padding: 24px 16px;
+        max-width: @max-width;
+        justify-content: space-between;
+    }
+}
+
+
+.user-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.icons {
+    display: flex;
+    gap: 8px;
+
+    mat-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        transition: 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}

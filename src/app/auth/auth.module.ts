@@ -12,14 +12,11 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
     declarations: [LoginComponent],
     imports: [
-        CommonModule,
         ReactiveFormsModule,
         AuthRoutingModule,
         MatFormFieldModule,
         MatInputModule,
-        MatIconModule,
-        MatButtonModule,
-        SharedModule, // aqui vai os ícones registrados
+        SharedModule,
     ],
 })
 export class AuthModule { }

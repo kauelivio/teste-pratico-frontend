@@ -1,0 +1,151 @@
+@import '~src/styles';
+
+.container {
+    max-width: @max-width;
+    padding: 0;
+    height: 100dvh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 992px) {
+        height: calc(100dvh - 80px);
+        padding: 0px 16px;
+    }
+
+    .back {
+        width: 100%;
+        height: 56px;
+        align-items: center;
+        color: @gray-90;
+        border-bottom: 1px solid @gray-50;
+        margin-bottom: 1rem;
+        display: none;
+
+        @media (min-width: 992px) {
+            display: flex;
+        }
+
+        mat-icon {
+            padding-right: 8px;
+        }
+
+        mat-icon,
+        span {
+            cursor: pointer;
+        }
+    }
+}
+
+.layout {
+    display: flex;
+    height: 100%;
+    position: relative;
+}
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    height: 56px;
+    background: none;
+    border: 1px solid @gray-50;
+    color: @gray-90;
+    text-transform: uppercase;
+
+    mat-icon {
+        padding-right: 8px;
+    }
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.sidebar {
+    width: 100%;
+    background-color: @white;
+    color: @gray-90;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    z-index: 998;
+
+    @media (max-width: 768px) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: calc(100dvh - 56px);
+        transform: translateX(-100%);
+    }
+
+    @media (min-width: 768px) {
+        max-width: 368px;
+    }
+
+    &.open {
+        transform: translateX(0);
+    }
+
+    .plano {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        >img {
+            margin-bottom: 8px;
+        }
+
+        >h5 {
+            margin-bottom: 2px;
+        }
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid @gray-50;
+            box-sizing: border-box;
+            padding: 1rem 0 15px;
+
+            text-decoration: none;
+            color: @gray-90;
+
+            mat-icon:first-of-type {
+                padding-right: 16px;
+            }
+
+            span {
+                height: 32px;
+                display: flex;
+                align-items: center;
+                margin-right: auto;
+            }
+
+            &.active {
+                color: @primary;
+            }
+        }
+
+        a:first-of-type {
+            padding-top: 0px;
+        }
+
+        a:hover mat-icon {
+            color: @primary;
+        }
+    }
+}
+
+.content {
+    flex: 1;
+    padding: 2rem;
+    width: 100%;
+}

@@ -1,0 +1,70 @@
+<app-header></app-header>
+
+<main class="container">
+    <div class="back">
+        <mat-icon>arrow_back</mat-icon>
+        <span>MEU PLANO</span>
+    </div>
+    <div class="menu-toggle" (click)="toggleMenu()">
+        <mat-icon>arrow_back</mat-icon>
+        <span>{{currentTitle}}</span>
+    </div>
+    <div class="layout">
+        <!-- Sidebar com classe dinâmica -->
+        <nav class="sidebar" [class.open]="menuOpen">
+            <div class="plano">
+                <img src="assets/address-card.svg" alt="">
+                <h5>Meu plano</h5>
+                <p>O que você quer fazer?</p>
+            </div>
+
+            <div class="menu">
+                <a routerLink="dashboard" routerLinkActive="active" (click)="closeMenu()">
+                    <mat-icon svgIcon="file-invoice"></mat-icon>
+                    <span>Ver Extrato</span>
+                    <mat-icon>chevron_right</mat-icon>
+                </a>
+                <a routerLink="contribuicao-mensal" routerLinkActive="active" (click)="closeMenu()">
+                    <mat-icon svgIcon="file-invoice"></mat-icon>
+                    <span>Contribuições</span>
+                    <mat-icon>chevron_right</mat-icon>
+                </a>
+                <a routerLink="contribuicao-extra" routerLinkActive="active" (click)="closeMenu()">
+                    <mat-icon svgIcon="file-invoice"></mat-icon>
+                    <span>Contribuição Extra</span>
+                    <mat-icon>chevron_right</mat-icon>
+                </a>
+                <a routerLink="contribuicao-extra" routerLinkActive="active" (click)="closeMenu()">
+                    <mat-icon svgIcon="file-invoice"></mat-icon>
+                    <span>Documentos</span>
+                    <mat-icon>chevron_right</mat-icon>
+                </a>
+                <a routerLink="contribuicao-extra" routerLinkActive="active" (click)="closeMenu()">
+                    <mat-icon svgIcon="file-invoice"></mat-icon>
+                    <span>Regime de Tributação</span>
+                    <mat-icon>chevron_right</mat-icon>
+                </a>
+                <a routerLink="contribuicao-extra" routerLinkActive="active" (click)="closeMenu()">
+                    <mat-icon svgIcon="file-invoice"></mat-icon>
+                    <span>Solicitar Benefício</span>
+                    <mat-icon>chevron_right</mat-icon>
+                </a>
+                <a routerLink="contribuicao-extra" routerLinkActive="active" (click)="closeMenu()">
+                    <mat-icon svgIcon="file-invoice"></mat-icon>
+                    <span>Extrato Regressivo</span>
+                    <mat-icon>chevron_right</mat-icon>
+                </a>
+                <a routerLink="contribuicao-extra" routerLinkActive="active" (click)="closeMenu()">
+                    <mat-icon svgIcon="file-invoice"></mat-icon>
+                    <span>Informações</span>
+                    <mat-icon>chevron_right</mat-icon>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Área principal -->
+        <main class="content" (click)="closeMenu()">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</main>

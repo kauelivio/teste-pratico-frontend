@@ -45,7 +45,7 @@ export class LoginComponent {
                 next: (success) => {
                     this.isLoading = false;
                     if (success) {
-                        this.router.navigate(['/home']);
+                        this.router.navigate(['/']);
                     } else {
                         this.errorMessage = 'E-mail ou senha incorretos';
                     }

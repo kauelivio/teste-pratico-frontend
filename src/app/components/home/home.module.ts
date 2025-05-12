@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { HomeRoutingModule } from './home-routing.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 import { HomeComponent } from './home.component';
-import { RouterModule } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
-
-
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
     declarations: [
-        HomeComponent
+        HomeComponent,
+        HeaderComponent
     ],
     imports: [
-        CommonModule,
-        MatIconModule,
-        RouterModule.forChild([
-            { path: '', component: HomeComponent }
-        ])
+        NgApexchartsModule,
+        MatSidenavModule,
+        SharedModule,
+        HomeRoutingModule
     ]
 })
 export class HomeModule { }

@@ -1,13 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @primary: #1AAAB2;
 @secondary: #21232A;
+@gray-50: #BDBDBD;
+@gray-90: #464646;
 @white: #fff;
+
+@max-width: 1440px;
 
 body,
 html,
 main,
 div,
 span,
+a,
 p,
 h1,
 h2,
@@ -63,8 +68,20 @@ h6 {
     color: @white !important;
 }
 
+.mat-mdc-input-element {
+    color: @gray-90 !important;
+}
+
 .mat-form-field-appearance-fill.mat-form-field-invalid {
     .mat-mdc-form-field-icon-suffix button {
-      color: #f44336; // Cor de erro padrão (Material Red)
+        color: #f44336; // Cor de erro padrão (Material Red)
+    }
+}
+
+&.active {
+    color: @primary;
+
+    mat-icon svg path {
+        fill: @primary;
     }
 }

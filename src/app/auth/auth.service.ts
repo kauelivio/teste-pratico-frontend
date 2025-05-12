@@ -43,7 +43,7 @@ export class AuthService {
     logout(): void {
         this.loggedInUser = null;
         localStorage.removeItem('user');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/auth/login']);
         this.isLoggedIn = false;
     }
 

@@ -25,7 +25,7 @@
                 <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
                     A senha é obrigatória
                 </mat-error>
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="hide">
                     <mat-icon [svgIcon]="hide ? 'check-circle' : 'eye-black'"></mat-icon>
                 </button>
@@ -38,10 +38,6 @@
     
             <p class="esqueceu-senha">Esqueceu a senha? <span>Acesse aqui</span></p>
             <h6>Versão 0.01</h6>
-    
-            <!-- <div *ngIf="errorMessage" class="error-message">
-                {{ errorMessage }}
-            </div> -->
         </form>
     </div>
     <div class="banner">
