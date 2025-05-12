@@ -1,0 +1,38 @@
+<div class="grafico-wrapper">
+    <h4>Total em contribuições</h4>
+    <h2>{{totalSum | currency: 'BRL' }}</h2>
+
+    <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!" [labels]="chartOptions.labels!"
+        [fill]="chartOptions.fill!" [legend]="chartOptions.legend!" [dataLabels]="chartOptions.dataLabels!"
+        [responsive]="chartOptions.responsive!" [plotOptions]="chartOptions.plotOptions!">
+    </apx-chart>
+
+    <div class="legend" *ngFor="let label of chartOptions.labels; let i = index">
+        <span class="dot" [ngStyle]="{ 'background-color': chartOptions.fill?.colors?.[i] }"></span>
+        <span>{{ label }}</span>
+        <strong>{{ chartOptions.series?.[i] | currency: 'BRL' }}</strong>
+    </div>
+</div>
+
+<div class="cards">
+    <div class="card" *ngFor="let card of data">
+        <div class="title">
+            <mat-icon svgIcon="coins"></mat-icon>
+            <span class="label">{{card.label}}</span>
+            <mat-icon color="primary">chevron_right</mat-icon>
+        </div>
+        <hr>
+        <div class="contribution">
+            <div class="label">Valor da contribuição</div>
+            <div class="value">{{card.value | currency: 'BRL'}}</div>
+        </div>
+        <div *ngIf="card?.percentage">
+            <div class="label">Porcentagem do salário</div>
+            <div class="value">{{card.percentage}}%</div>
+        </div>
+        <button mat-button type="button" color="primary">
+            Alterar Contribuição
+        </button>
+    </div>
+
+</div>

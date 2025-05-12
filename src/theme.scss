@@ -1,53 +1,59 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 // Define uma paleta personalizada baseada em #1AAAB2
-$my-primary: mat.define-palette((
-  50: #e1f6f7,
-  100: #b3e8ea,
-  200: #80d9dc,
-  300: #4dc9ce,
-  400: #26bec4,
-  500: #1aaab2, // cor base
-  600: #189ea5,
-  700: #149096,
-  800: #108287,
-  900: #086e71,
-  A100: #aef9ff,
-  A200: #7bf2ff,
-  A400: #48ecff,
-  A700: #2ee9ff,
-  contrast: (
-    50: white,
-    100: white,
-    200: white,
-    300: white,
-    400: white,
-    500: white,
-    600: white,
-    700: white,
-    800: white,
-    900: white,
-    A100: white,
-    A200: white,
-    A400: white,
-    A700: white,
-  )
-));
+$my-primary: mat.define-palette(
+    (
+        50: #e1f6f7,
+        100: #b3e8ea,
+        200: #80d9dc,
+        300: #4dc9ce,
+        400: #26bec4,
+        500: #1aaab2,
+        // cor base
+        600: #189ea5,
+        700: #149096,
+        800: #108287,
+        900: #086e71,
+        A100: #aef9ff,
+        A200: #7bf2ff,
+        A400: #48ecff,
+        A700: #2ee9ff,
+        contrast: (
+            50: white,
+            100: white,
+            200: white,
+            300: white,
+            400: white,
+            500: white,
+            600: white,
+            700: white,
+            800: white,
+            900: white,
+            A100: white,
+            A200: white,
+            A400: white,
+            A700: white
+        )
+    )
+);
 
 // Define a cor primária personalizada
-// $my-primary: mat.define-palette($my-primary);
+$my-primary: mat.define-palette($my-primary);
 $my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 $my-warn: mat.define-palette(mat.$red-palette);
 
 // Crie o tema
-$my-theme: mat.define-light-theme((
-  color: (
-    primary: $my-primary,
-    accent: $my-accent,
-    warn: $my-warn,
-  )
-));
+$my-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $my-primary,
+            accent: $my-accent,
+            warn: $my-warn
+        )
+    )
+);
 
 // Inclua os estilos do tema
 @include mat.core();
 @include mat.all-component-themes($my-theme);
+@include mat.all-component-typographies($my-theme);

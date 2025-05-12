@@ -5,7 +5,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 @Injectable({ providedIn: 'root' })
 export class IconRegistryService {
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    const icons = ['home', 'eye', 'eye-black', 'repeat', 'check-circle'];
+    const icons = ['home', 'eye', 'eye-black', 'repeat', 'check-circle', 'file-invoice', 'coins'];
     for (const icon of icons) {
       iconRegistry.addSvgIcon(
         icon,
