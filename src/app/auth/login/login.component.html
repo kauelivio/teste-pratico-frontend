@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="login">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <img src="assets/logo.svg" alt="">
+        
+            <h5>Boas-vindas ao Portal!<br>
+                Para começar, qual seu email ou CPF?</h5>
+        
+            <p>Precisamos desta confirmação para dar início ao seu acesso.</p>
+            <mat-form-field>
+                <mat-label>Email ou CPF</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+                <mat-error
+                    *ngIf="loginForm.get('email')?.hasError('email') && !loginForm.get('email')?.hasError('required')">
+                    Digite um endereço de email válido.
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+                    O email é obrigatório!
+                </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Senha</mat-label>
+                <input [type]="hide ? 'password' : 'text'" matInput formControlName="password" placeholder="Digite sua senha">
+                <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+                    A senha é obrigatória
+                </mat-error>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon [svgIcon]="hide ? 'check-circle' : 'eye-black'"></mat-icon>
+                </button>
+            </mat-form-field>
+    
+            <button mat-flat-button type="submit" [disabled]="isLoading" color="primary">
+                <span *ngIf="!isLoading">Acessar</span>
+                <span *ngIf="isLoading">Carregando...</span>
+            </button>
+    
+            <p class="esqueceu-senha">Esqueceu a senha? <span>Acesse aqui</span></p>
+            <h6>Versão 0.01</h6>
+    
+            <!-- <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+            </div> -->
+        </form>
+    </div>
+    <div class="banner">
+        <img src="assets/banner.png" alt="">
+        <h5>Bem-vindo a seu novo Dashboard</h5>
+    </div>
+
+</div>
