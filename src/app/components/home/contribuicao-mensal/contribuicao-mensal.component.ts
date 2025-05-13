@@ -18,7 +18,7 @@ export type ChartOptions = {
     templateUrl: './contribuicao-mensal.component.html',
     styleUrls: ['./contribuicao-mensal.component.less']
 })
-export class ContribuicaoMensalComponent implements OnInit {
+export class ContribuicaoMensalComponent {
 
     public chartOptions: Partial<ChartOptions>;
 
@@ -74,10 +74,6 @@ export class ContribuicaoMensalComponent implements OnInit {
                 }
             },
         } as ChartOptions;
-
-    }
-    ngOnInit(): void {
-        // this.total = 
 
     }
 }

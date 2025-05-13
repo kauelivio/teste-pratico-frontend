@@ -5,7 +5,7 @@ MOCK_USERS
 
 describe('cpfFormatter', () => {
     it('deve retornar undefined se o valor for inválido', () => {
-        const input = 'kauelivio'; // ou qualquer valor inválido
+        const input = 'kauelivio';
         expect(cpfFormatter(input)).toBeUndefined();
     });
 

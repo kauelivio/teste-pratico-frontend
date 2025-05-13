@@ -18,7 +18,7 @@ describe('isCpf', () => {
 
     it('deve retornar false para strings com letras ou símbolos', () => {
         expect(isCpf('teste@123.com')).toBeFalse();
-        expect(isCpf('1%$&0tes0')).toBeFalse(); // com pontuação
+        expect(isCpf('1%$&0tes0')).toBeFalse();
     });
 
     it('deve retornar false para null ou undefined', () => {
