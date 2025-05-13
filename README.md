@@ -1,27 +1,51 @@
-# TestePraticoFrontend
+# Teste Prático de Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Projeto construído como desafio técnico com objetivo de avaliação dos conhecimentos e habilidades do desenvolvedor.
 
-## Development server
+Desenvolvido utilizando Angular 16.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Começando
 
-## Code scaffolding
+Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 📋 Pré-requisitos
 
-## Build
+De que coisas você precisa para instalar o software e como instalá-lo?
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* [npm](https://docs.npmjs.com/) - Gerenciador de dependências
+* [Node.js v16.x ou v18.x](https://nodejs.org/docs/latest/api/)  - Ambiente de execução
+* [Angular CLI v16.x](https://v16.angular.io/docs) - Framework usado
+    * Instale globalmente
+    ```
+    npm install -g @angular/cli@16.2.16
+    ```
+    * Verifique a versão
+    ```
+    ng version
+    ```
 
-## Running unit tests
+### 🔧 Instalação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Dentro do ambiente node com os pré-requisitos devidamente instalados:
 
-## Running end-to-end tests
+* Instale as dependências do projeto 
+```
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* Inicie a aplicação
+```
+ng serve -o
+```
 
-## Further help
+## ⚙️ Executando os testes
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+A aplicação está coberta de testes, principalmente nos fluxos de login e em componentes mais complexos.
+
+Para executar os testes automatizados da aplicação:
+```
+ng test
+```
+## 📄 Licença
+
+Este projeto está sob a MIT License - veja o arquivo [LICENSE](https://github.com/kauelivio/teste-pratico-frontend/blob/main/LICENSE) para detalhes.
