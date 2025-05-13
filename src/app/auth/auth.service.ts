@@ -5,10 +5,9 @@ import { MOCK_USERS } from '../shared/mock/users.mock';
 import { Router } from '@angular/router';
 
 interface userDetails {
-    email: string;
+    login: string;
     password: string;
 }
-
 
 @Injectable({
     providedIn: 'root'
@@ -25,7 +24,7 @@ export class AuthService {
 
     login(userCredentials: userDetails): Observable<boolean> {
         const user = MOCK_USERS.find((user) =>
-            user.email === userCredentials.email &&
+            (user.email === userCredentials.login || user.cpf === userCredentials.login)  &&
             user.password === userCredentials.password
         );
 

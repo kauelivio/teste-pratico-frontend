@@ -7,6 +7,5 @@ import { IconRegistryService } from './shared/icon-registry.service';
     styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-    title = 'teste-pratico-frontend';
     constructor(private iconRegistry: IconRegistryService) { }
 }

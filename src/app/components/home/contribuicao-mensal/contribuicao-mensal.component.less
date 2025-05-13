@@ -15,9 +15,8 @@
 
     h2 {
         margin-top: 0;
-        margin-bottom: 20px;
         font-size: 1.25rem;
-        font-weight: 600;  
+        font-weight: 600;
     }
 
     .legend {
@@ -49,6 +48,7 @@
 .cards {
     margin-top: 16px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 16px;
 
@@ -64,7 +64,7 @@
         border: 1px solid @gray-50;
         border-radius: 10px;
 
-        > div {
+        >div {
             display: flex;
             align-items: center;
         }
@@ -73,6 +73,12 @@
             width: 100%;
             border-top: 1px solid @gray-50;
             margin: 0;
+        }
+
+        .title {
+            mat-icon:first-of-type {
+                margin-right: 8px;
+            }
         }
 
         .label {
@@ -85,8 +91,12 @@
 
         button {
             margin-top: 8px;
-            max-width: 312px;
-            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            button {
+                margin: 8px auto;
+            }
         }
     }
 }

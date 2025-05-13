@@ -7,6 +7,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     @media (min-width: 992px) {
         height: calc(100dvh - 80px);
@@ -41,6 +42,11 @@
     display: flex;
     height: 100%;
     position: relative;
+    max-height: calc(100dvh - 56px);
+
+    @media (min-width: 992px) {
+        max-height: calc(100% - 56px);
+    }
 }
 
 .menu-toggle {
@@ -72,6 +78,7 @@
     box-sizing: border-box;
     transition: transform 0.3s ease;
     z-index: 998;
+    overflow: auto;
 
     @media (max-width: 768px) {
         position: absolute;
@@ -146,6 +153,15 @@
 
 .content {
     flex: 1;
-    padding: 2rem;
+    padding: 1rem;
     width: 100%;
+    overflow: auto;
+    
+    @media (min-width: 768px) {
+        padding-left: 1rem;
+
+        
+    }
+
+    // flex-grow: ;
 }

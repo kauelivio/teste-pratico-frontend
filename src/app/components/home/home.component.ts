@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
 
 
 @Component({
@@ -13,7 +14,11 @@ export class HomeComponent implements OnInit {
 
     currentTitle: string = 'MEU PLANO';
 
-    constructor(private router: Router, private route: ActivatedRoute) { }
+    constructor(
+        private router: Router, 
+        private route: ActivatedRoute,
+        private authService: AuthService
+    ) { }
 
     ngOnInit(): void {
         this.setupRouteListener();
@@ -48,6 +53,7 @@ export class HomeComponent implements OnInit {
 
         this.currentTitle = 'MEU PLANO';
     }
+    
     toggleMenu() {
         this.menuOpen = !this.menuOpen;
     }
@@ -58,5 +64,8 @@ export class HomeComponent implements OnInit {
         }
     }
 
+    logout() {
+        this.authService.logout();
+    }
 
 }
