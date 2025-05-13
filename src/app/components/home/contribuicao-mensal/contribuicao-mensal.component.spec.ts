@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { By } from '@angular/platform-browser';
 import { registerLocaleData } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
+import { CardComponent } from './card/card.component';
 
 describe('ContribuicaoMensalComponent', () => {
     let component: ContribuicaoMensalComponent;
@@ -15,7 +16,10 @@ describe('ContribuicaoMensalComponent', () => {
     beforeEach(() => {
         registerLocaleData(localePt);
         TestBed.configureTestingModule({
-            declarations: [ContribuicaoMensalComponent],
+            declarations: [
+                ContribuicaoMensalComponent,
+                CardComponent
+            ],
             imports: [
                 NgApexchartsModule,
                 SharedModule

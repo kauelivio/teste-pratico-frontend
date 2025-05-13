@@ -1,0 +1,19 @@
+<div class="card" *ngIf="data">
+    <div class="title">
+        <mat-icon svgIcon="coins"></mat-icon>
+        <span class="label">{{data.label}}</span>
+        <mat-icon color="primary">chevron_right</mat-icon>
+    </div>
+    <hr>
+    <div class="contribution">
+        <div class="label">Valor da contribuição</div>
+        <div class="value">{{data.value | currency: 'BRL'}}</div>
+    </div>
+    <div *ngIf="data?.percentage">
+        <div class="label">Porcentagem do salário</div>
+        <div class="value">{{data.percentage}}%</div>
+    </div>
+    <button mat-button type="button" color="primary">
+        Alterar Contribuição
+    </button>
+</div>

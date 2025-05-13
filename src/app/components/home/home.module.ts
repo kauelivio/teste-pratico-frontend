@@ -7,12 +7,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { HomeComponent } from './home.component';
 import { HeaderComponent } from './header/header.component';
 import { ContribuicaoMensalComponent } from './contribuicao-mensal/contribuicao-mensal.component';
+import { CardComponent } from './contribuicao-mensal/card/card.component';
 
 @NgModule({
     declarations: [
         HomeComponent,
         HeaderComponent,
-        ContribuicaoMensalComponent
+        ContribuicaoMensalComponent,
+        CardComponent
     ],
     imports: [
         NgApexchartsModule,

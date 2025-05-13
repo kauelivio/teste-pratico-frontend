@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ApexChart, ApexDataLabels, ApexFill, ApexLegend, ApexNonAxisChartSeries, ApexPlotOptions, ApexResponsive } from 'ng-apexcharts';
+import { dataCardInterface } from './card/card.component';
 
 export type ChartOptions = {
     series: ApexNonAxisChartSeries;
@@ -22,7 +23,7 @@ export class ContribuicaoMensalComponent {
 
     public chartOptions: Partial<ChartOptions>;
 
-    data = [
+    data: dataCardInterface[] = [
         {
             total: 600000,
             label: 'Contribuição mensal',
