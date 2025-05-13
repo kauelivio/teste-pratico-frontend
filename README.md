@@ -46,6 +46,16 @@ Para executar os testes automatizados da aplicação:
 ```
 ng test
 ```
+
+## 📋 Anotações
+
+O projeto possui 2 usuários mockados para serem utilizados para fins de testes.
+
+login: usuario@mock.com password: senha123
+
+login: admin@mock.com password: senha123
+
+Para adicionar usuários extras confira o arquivo [USERS_MOCK](https://github.com/kauelivio/teste-pratico-frontend/blob/main/src/app/shared/mock/users.mock.ts)
 ## 📄 Licença
 
 Este projeto está sob a MIT License - veja o arquivo [LICENSE](https://github.com/kauelivio/teste-pratico-frontend/blob/main/LICENSE) para detalhes.
