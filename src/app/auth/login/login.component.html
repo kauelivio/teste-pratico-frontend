@@ -9,13 +9,13 @@
             <p>Precisamos desta confirmação para dar início ao seu acesso.</p>
             <mat-form-field>
                 <mat-label>Email ou CPF</mat-label>
-                <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+                <input #loginInput="matInput" type="email" matInput formControlName="login" placeholder="email@domain.com ou ***.***.***-X" (blur)="formatCpfOnBlur()"/>
                 <mat-error
-                    *ngIf="loginForm.get('email')?.hasError('email') && !loginForm.get('email')?.hasError('required')">
-                    Digite um endereço de email válido.
+                    *ngIf="login?.hasError('cpfOrEmail') && !login?.hasError('required')">
+                    Digite um endereço de email ou cpf válido.
                 </mat-error>
-                <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
-                    O email é obrigatório!
+                <mat-error *ngIf="login?.hasError('required')">
+                    O campo é obrigatório!
                 </mat-error>
             </mat-form-field>
     
@@ -27,7 +27,7 @@
                 </mat-error>
                 <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="hide">
-                    <mat-icon [svgIcon]="hide ? 'check-circle' : 'eye-black'"></mat-icon>
+                    <mat-icon [svgIcon]="hide ? 'eye-black' : 'check-circle'"></mat-icon>
                 </button>
             </mat-form-field>
     

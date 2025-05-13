@@ -3,18 +3,6 @@
 .container {
     display: flex;
     height: 100dvh;
-    // background: url('src/assets/background.jpg');
-
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom right,
-                rgba(11, 199, 209, 0.5),
-                rgba(11, 66, 69, 0.5)),
-            url('src/assets/background.jpg') no-repeat center center / cover;
-        z-index: -1; // fica atrás do conteúdo
-    }
 }
 
 .login {
@@ -27,7 +15,6 @@
         padding: 64px 80px;
         max-width: 530px;
     }
-
 }
 
 form {
@@ -87,12 +74,24 @@ form {
 }
 
 .banner {
-    // display: flex;
     flex-grow: 1;
     align-items: center;
     flex-direction: column;
     padding-top: 64px;
     display: none;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        rotate: 180deg;
+        background: linear-gradient(to top right,
+                rgba(11, 66, 69, 0.3),
+                rgba(11, 199, 209, 0.4)),
+            url('src/assets/background.jpg') no-repeat center center / cover;
+        z-index: -1;
+    }
 
     @media (min-width: 992px) {
         display: flex;
